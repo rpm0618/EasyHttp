@@ -126,6 +126,13 @@ namespace EasyHttp.Http
             return ProcessRequest();
         }
 
+        public HttpResponse Get(string uri, object data, string contentType, object query)
+        {
+            InitRequest(uri, HttpMethod.GET, query);
+            InitData(data, contentType);
+            return ProcessRequest();
+        }
+
         public HttpResponse Options(string uri)
         {
             InitRequest(uri, HttpMethod.OPTIONS, null);
@@ -178,7 +185,13 @@ namespace EasyHttp.Http
             return ProcessRequest();
         }
 
- 
+        public HttpResponse Delete(string uri, object data, string contentType, object query)
+        {
+            InitRequest(uri, HttpMethod.DELETE, query);
+            InitData(data, contentType);
+            return ProcessRequest();
+        }
+
         public HttpResponse Head(string uri, object query = null)
         {
             InitRequest(uri, HttpMethod.HEAD, query);
