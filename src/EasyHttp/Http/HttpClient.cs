@@ -126,7 +126,7 @@ namespace EasyHttp.Http
             return ProcessRequest();
         }
 
-        public HttpResponse Get(string uri, object data, string contentType, object query)
+        public HttpResponse Get(string uri, object data, string contentType, object query = null)
         {
             InitRequest(uri, HttpMethod.GET, query);
             InitData(data, contentType);
@@ -185,7 +185,7 @@ namespace EasyHttp.Http
             return ProcessRequest();
         }
 
-        public HttpResponse Delete(string uri, object data, string contentType, object query)
+        public HttpResponse Delete(string uri, object data, string contentType, object query = null)
         {
             InitRequest(uri, HttpMethod.DELETE, query);
             InitData(data, contentType);
